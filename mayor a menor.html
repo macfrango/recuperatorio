@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio ###</title>
+</head>
+<body>
+    <input type="number" id="nro">
+    <button onclick="insertar()">Insertar</button>
+    <button onclick="insertarRandom()">Insertar random</button>
+    <button onclick="btn_ordenar()">Ordenar</button>
+    <span><b>Cantidad de numeros en el vector:</b><span id="cnt">0</span></span>
+
+    <div id="res"></div>
+<script>
+    let vector = [];
+
+    function insertar(){
+        vector.push(document.getElementById("nro").value);
+        document.getElementById("nro").value = "";
+        mostrarCnt(vector)
+        mostrar(vector);
+    }
+    function insertarRandom(){
+        let r = (Math.random()*1000).toFixed(0);
+        vector.push(r);
+        document.getElementById("nro").value = r;
+        mostrarCnt(vector)
+        mostrar(vector)
+    }
+    function ordenar(x){
+        let vectOrdenado = x.sort(function(a, b){return b - a});
+        return vectOrdenado;
+    }
+    function mostrar(x) {
+        let resTmp = '';
+        x.forEach(element => {
+            resTmp += element + ', ';
+        });
+        document.getElementById("res").innerHTML += resTmp + "<br />" 
+    }
+    function mostrarCnt(x) {
+        document.getElementById("cnt").innerHTML=x.length;
+        
+    }
+    function btn_ordenar() {
+        let y = ordenar(vector)
+        console.log(y)
+        document.getElementById("res").innerHTML += "Vector ordenado: <br />" 
+        mostrar(y)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<header>
+		<h1>Operaciones con Arreglos</h1>
+	</header>
+	<article>
+            <div class="vector">
+                <br>La suma de los numeros positivos del vector : [15,-6,0,8,-2,5,4,-10,0,5,3]</br>
+            </div>
+			<div class="calculos" id="salida">	    
+			</div>
+
+
+<script type="text/javascript">
+	var arreglo = [15,-6,0,8,-2,5,4,-10,0,5,3];
+    var suma = 0;
+	for (var i=1 ; i < arreglo.length ; i++){
+
+	    if (arreglo[i] > 0){
+		suma += arreglo[i];  
+	    }
+        document.getElementById("salida").innerHTML ="es : " + suma;
+    }
+</script>
+
+</body>
+</html>
